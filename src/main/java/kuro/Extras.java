@@ -40,7 +40,7 @@ public final class Extras {
 
    public static void noFall() {
       ClientPlayerEntity p = mc.player;
-      if (p.fallDistance > 2.5F && !p.isOnGround() && !p.isFallFlying() && mc.getNetworkHandler() != null) {
+      if (p.fallDistance > 2.5F && !p.isOnGround() && !p.isGliding() && mc.getNetworkHandler() != null) {
          mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.OnGroundOnly(true, p.horizontalCollision));
       }
    }
